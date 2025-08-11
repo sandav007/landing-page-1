@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚀 AI Mentor - דוד שמואל | מהפכת ה-AI לעסקים 2025</title>
+    <meta name="description" content="AI Mentor - דוד שמואל | אימון אישי, עסקי ופיננסי עם שילוב טכנולוגיית AI. קורס AI למאמנים 2025. חברת I Will.">
+    
+    <!-- CDN Libraries -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            font-family: 'Heebo', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hover-scale {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .hover-scale:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .pulse-glow {
+            animation: pulse-glow 2s infinite;
+        }
+        
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(102, 126, 234, 0.4); }
+            50% { box-shadow: 0 0 30px rgba(102, 126, 234, 0.8); }
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.8s ease forwards;
+        }
+        
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .typing-effect {
+            overflow: hidden;
+            border-left: 2px solid #667eea;
+            white-space: nowrap;
+            animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: #667eea; }
+        }
+        
+        .contact-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .contact-btn:hover:before {
+            left: 100%;
+        }
+        
+        .contact-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+        
+        .course-highlight {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            animation: highlight-pulse 3s ease-in-out infinite;
+        }
+        
+        @keyframes highlight-pulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 20px rgba(240, 147, 251, 0.3); }
+            50% { transform: scale(1.02); box-shadow: 0 0 30px rgba(240, 147, 251, 0.5); }
+        }
+        
+        .service-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-10px);
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .navbar-blur {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
+        }
+        
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .typing-effect {
+                animation: none;
+                border: none;
+                white-space: normal;
+            }
+        }
+        
+        /* Success message styles */
+        .success-message {
+            background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px 0;
+            color: #2d3748;
+            font-weight: 600;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+        }
+        
+        .success-message.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 navbar-blur shadow-lg transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <h1 class="text-2xl font-bold gradient-text">AI Mentor</h1>
+                </div>
+                <div class="hidden md:block">
+                    <div class="mr-10 flex items-baseline space-x-4">
+                        <a href="#home" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">בית</a>
+                        <a href="#course" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">הקורס</a>
+                        <a href="#services" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">שירותים</a>
+                        <a href="#about" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">אודות</a>
+                        <a href="#contact" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">יצירת קשר</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-blue-600 focus:outline-none">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">בית</a>
+                <a href="#course" class="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">הקורס</a>
+                <a href="#services" class="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">שירותים</a>
+                <a href="#about" class="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">אודות</a>
+                <a href="#contact" class="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">יצירת קשר</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen gradient-bg flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-black opacity-20"></div>
+        <div class="relative z-10 text-center text-white px-4 max-w-6xl mx-auto">
+            <div class="fade-in">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 typing-effect">
+                    🚀 AI Mentor - דוד שמואל
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed">
+                    מאמן אישי, עסקי ופיננסי • מומחה לחדשנות ושילוב AI
+                    <br>
+                    יוצר פריצות דרך מדידות עבור אנשים, משפחות ועסקים
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+                    <button onclick="scrollToSection('course')" class="contact-btn text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg pulse-glow">
+                        <i class="fas fa-graduation-cap ml-2"></i>
+                        גלה את קורס ה-AI
+                    </button>
+                    <button onclick="scrollToSection('contact')" class="bg-white text-gray-800 px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover-scale">
+                        <i class="fas fa-phone ml-2"></i>
+                        יצירת קשר
+                    </button>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+                    <div class="floating bg-white bg-opacity-20 backdrop-filter backdrop-blur-lg rounded-lg p-6 hover-scale">
+                        <i class="fas fa-rocket text-3xl mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">חדשנות מתקדמת</h3>
+                        <p>שילוב טכנולוגיות AI מתקדמות בעסקים</p>
+                    </div>
+                    <div class="floating bg-white bg-opacity-20 backdrop-filter backdrop-blur-lg rounded-lg p-6 hover-scale" style="animation-delay: 0.5s;">
+                        <i class="fas fa-chart-line text-3xl mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">תוצאות מדידות</h3>
+                        <p>פריצות דרך מבוססות נתונים ומדדי הצלחה</p>
+                    </div>
+                    <div class="floating bg-white bg-opacity-20 backdrop-filter backdrop-blur-lg rounded-lg p-6 hover-scale" style="animation-delay: 1s;">
+                        <i class="fas fa-users text-3xl mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">חיבור לארגון אלון גל</h3>
+                        <p>חלק מארגון מוביל בישראל בתחום הטכנולוגיה</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Section -->
+    <section id="course" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-6">קורס AI למאמנים 2025</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">חוד החנית שלי - תוכנית מקצועית חדשנית למאמנים, עסקים ומנהלים</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="course-highlight text-white rounded-3xl p-8 shadow-2xl">
+                    <div class="text-center mb-8">
+                        <h3 class="text-3xl font-bold mb-4">🎯 פרטי הקורס</h3>
+                        <div class="text-6xl font-bold mb-2" id="price-counter">1600₪</div>
+                        <p class="text-xl opacity-90">לכל התוכנית המלאה</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div class="bg-white bg-opacity-20 rounded-lg p-4 text-center">
+                            <i class="fas fa-calendar-alt text-2xl mb-2"></i>
+                            <h4 class="font-semibold">מועד התחלה</h4>
+                            <p>ינואר 2025</p>
+                        </div>
+                        <div class="bg-white bg-opacity-20 rounded-lg p-4 text-center">
+                            <i class="fas fa-clock text-2xl mb-2"></i>
+                            <h4 class="font-semibold">מספר מפגשים</h4>
+                            <p>8 מפגשים</p>
+                        </div>
+                        <div class="bg-white bg-opacity-20 rounded-lg p-4 text-center">
+                            <i class="fas fa-laptop text-2xl mb-2"></i>
+                            <h4 class="font-semibold">אורך מפגש</h4>
+                            <p>כשעתיים</p>
+                        </div>
+                        <div class="bg-white bg-opacity-20 rounded-lg p-4 text-center">
+                            <i class="fas fa-users text-2xl mb-2"></i>
+                            <h4 class="font-semibold">קבוצת ואטסאפ</h4>
+                            <p>תמיכה מתמשכת</p>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <button onclick="openWhatsApp()" class="bg-white text-purple-600 px-8 py-4 rounded-full font-bold text-lg hover-scale shadow-lg">
+                            <i class="fab fa-whatsapp ml-2"></i>
+                            הרשם עכשיו לקורס
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="space-y-6">
+                    <h3 class="text-3xl font-bold gradient-text mb-8">מה תלמד בקורס?</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-gray-50 rounded-lg p-6 hover-scale">
+                            <h4 class="text-xl font-semibold text-gray-800 mb-2">
+                                <i class="fas fa-brain text-blue-600 ml-2"></i>
+                                הנדסת פרומפטים מתקדמת
+                            </h4>
+                            <p class="text-gray-600">כתיבת פרומפטים אפקטיביים וטכניקות מתקדמות</p>
+                        </div>
+                        
+                        <div class="bg-gray-50 rounded-lg p-6 hover-scale">
+                            <h4 class="text-xl font-semibold text-gray-800 mb-2">
+                                <i class="fas fa-palette text-purple-600 ml-2"></i>
+                                יצירה חזותית עם AI
+                            </h4>
+                            <p class="text-gray-600">DALL·E, Runway - הפיכת רעיונות לתמונות ווידאו</p>
+                        </div>
+                        
+                        <div class="bg-gray-50 rounded-lg p-6 hover-scale">
+                            <h4 class="text-xl font-semibold text-gray-800 mb-2">
+                                <i class="fas fa-chart-line text-green-600 ml-2"></i>
+                                אסטרטגיה עסקית עם AI
+                            </h4>
+                            <p class="text-gray-600">פיתוח אסטרטגיות הצלחה מבוססות טכנולוגיה</p>
+                        </div>
+                        
+                        <div class="bg-gray-50 rounded-lg p-6 hover-scale">
+                            <h4 class="text-xl font-semibold text-gray-800 mb-2">
+                                <i class="fas fa-cogs text-orange-600 ml-2"></i>
+                                ניהול משולב ב-AI
+                            </h4>
+                            <p class="text-gray-600">כלים אוטומטיים לניהול ותהליכי עבודה</p>
+                        </div>
+                        
+                        <div class="bg-gray-50 rounded-lg p-6 hover-scale">
+                            <h4 class="text-xl font-semibold text-gray-800 mb-2">
+                                <i class="fas fa-share-alt text-pink-600 ml-2"></i>
+                                נוכחות דיגיטלית חכמה
+                            </h4>
+                            <p class="text-gray-600">בניית נוכחות חברתית ותקשורתית עם AI</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 gradient-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">השירותים שלי</h2>
+                <p class="text-xl text-gray-200 max-w-3xl mx-auto">אימון מקצועי מותאם אישית לכל סוג לקוח</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="service-card rounded-2xl p-8 text-white hover-scale">
+                    <div class="text-center mb-6">
+                        <i class="fas fa-user text-4xl mb-4"></i>
+                        <h3 class="text-2xl font-bold mb-2">אימון אישי</h3>
+                        <div class="text-3xl font-bold text-yellow-300 mb-2">1600₪</div>
+                        <p class="text-gray-200">פגישה בשבוע</p>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-400 ml-2"></i>
+                            <span>הגדרת חזון אסטרategי</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-400 ml-2"></i>
+                            <span>מטרות מדידות וברורות</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-400 ml-2"></i>
+                            <span>בניית הרגלים יומיומיים</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-400 ml-2"></i>
+                            <span>שילוב כלי AI מתקדמים</span>
+                        </li>
+                    </ul>
+                    <button onclick="openWhatsApp()" class="w-full bg-white text-purple-600 py-3 rounded-full font-semibold hover-scale">
+                        התחל עכשיו
+                    </button>
+                </div>
+                
+                <div class="service-card rounded-2xl p-8 text-white hover-scale">
+                    <div class="text-center mb-6">
+                        <i class="fas fa-building text-4xl mb-4"></i>
+                        <h3 class="text-2xl font-bold mb-2">אימון עסקי</h3>
+                        <div class="text-3xl font-bold text-yellow-300 mb-2">מותאם</div>
+                        <p class="text-gray-200">לעסקים וארגונים</p>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-400 ml-2"></i>
+                            <span>אסטרטגיה עסקית מתקדמת</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-400 ml-2"></i>
+                            <span>שילוב AI בתהליכים</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-400 ml-2"></i>
+                            <span>אוטומציה חכמה</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-400 ml-2"></i>
+                            <span>מדידה ואופטימיזציה</span>
+                        </li>
+                    </ul>
+                    <button onclick="callDirect()" class="w-full bg-white text-purple-600 py-3 rounded-full font-semibold hover-scale">
+                        התקשר לפרטים
+                    </button>
+                </div>
+                
+                <div class="service-card rounded-2xl p-8 text-white hover-scale">
+                    <div class="text-center mb-6">
+                        <i class="fas fa-chart-pie text-4xl mb-4"></i>
+                        <h3 class="text-2xl font-bold mb-2">אימון פיננסי</h3>
+                        <div class="text-3xl font-bold text-yellow-300 mb-2">מותאם</div>
+                        <p class="text-gray-200">לניהול כספי חכם</p>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-400 ml-2"></i>
+                            <span>תכנון פיננסי אסטרטגי</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-400 ml-2"></i>
+                            <span>ניהול השקעות חכם</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-400 ml-2"></i>
+                            <span>אנליטיקה פיננסית</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-400 ml-2"></i>
+                            <span>כלי AI למעקב הכנסות</span>
+                        </li>
+                    </ul>
+                    <button onclick="sendEmail()" class="w-full bg-white text-purple-600 py-3 rounded-full font-semibold hover-scale">
+                        שלח הודעה
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-8">אודות דוד שמואל</h2>
+                    <div class="space-y-6 text-lg text-gray-700 leading-relaxed">
+                        <p>
+                            <strong>מאמן אישי, עסקי ופיננסי מומחה</strong> לחדשנות ושילוב AI. 
+                            אני עוזר ללקוחות לבנות מערכת שלמה ליצירת פריצת דרך עסקית ואישית.
+                        </p>
+                        <p>
+                            <strong>המטרה שלי:</strong> לאפשר ללקוחות להפוך חזון למציאות רווחית ומדויקת 
+                            באמצעות שילוב טכנולוגיות מתקדמות עם אימון מקצועי.
+                        </p>
+                        <p>
+                            <strong>החיבור לארגון אלון גל</strong> מאפשר לי להיות בחזית הטכנולוגיה 
+                            ולהעביר ללקוחות את הידע המתקדם ביותר בתחום ה-AI.
+                        </p>
+                        <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-6 mt-8">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-4">
+                                <i class="fas fa-target text-purple-600 ml-2"></i>
+                                הגישה שלי
+                            </h3>
+                            <ul class="space-y-2">
+                                <li class="flex items-center">
+                                    <i class="fas fa-arrow-left text-blue-600 ml-2"></i>
+                                    <span>משלב הגדרת החזון ועד יישום יומיומי</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-arrow-left text-blue-600 ml-2"></i>
+                                    <span>מדידה מתמשכת ואופטימיזציה</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-arrow-left text-blue-600 ml-2"></i>
+                                    <span>שילוב AI כמכפיל כוח</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <div class="bg-gradient-to-br from-purple-100 to-blue-100 rounded-3xl p-8 hover-scale">
+                        <div class="text-6xl mb-6">🚀</div>
+                        <h3 class="text-2xl font-bold gradient-text mb-4">המומחיות שלי</h3>
+                        <div class="grid grid-cols-2 gap-4 text-center">
+                            <div class="bg-white rounded-lg p-4 shadow-sm">
+                                <i class="fas fa-user-tie text-2xl text-blue-600 mb-2"></i>
+                                <p class="font-semibold">אימון אישי</p>
+                            </div>
+                            <div class="bg-white rounded-lg p-4 shadow-sm">
+                                <i class="fas fa-briefcase text-2xl text-green-600 mb-2"></i>
+                                <p class="font-semibold">אימון עסקי</p>
+                            </div>
+                            <div class="bg-white rounded-lg p-4 shadow-sm">
+                                <i class="fas fa-chart-line text-2xl text-purple-600 mb-2"></i>
+                                <p class="font-semibold">אימון פיננסי</p>
+                            </div>
+                            <div class="bg-white rounded-lg p-4 shadow-sm">
+                                <i class="fas fa-robot text-2xl text-orange-600 mb-2"></i>
+                                <p class="font-semibold">שילוב AI</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 gradient-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">בוא נתחיל את המסע</h2>
+                <p class="text-xl text-gray-200 max-w-3xl mx-auto">מוכן לפריצת דרך? בחר איך תרצה ליצור קשר</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div onclick="sendEmail()" class="contact-btn text-white p-8 rounded-2xl text-center cursor-pointer hover-scale">
+                    <i class="fas fa-envelope text-4xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">שלח מייל</h3>
+                    <p class="text-gray-200 mb-4">israeliwill@gmail.com</p>
+                    <div class="text-sm opacity-75">תגובה תוך 24 שעות</div>
+                </div>
+                
+                <div onclick="openWhatsApp()" class="contact-btn text-white p-8 rounded-2xl text-center cursor-pointer hover-scale">
+                    <i class="fab fa-whatsapp text-4xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">WhatsApp</h3>
+                    <p class="text-gray-200 mb-4">054-6822538</p>
+                    <div class="text-sm opacity-75">מענה מהיר ונוח</div>
+                </div>
+                
+                <div onclick="callDirect()" class="contact-btn text-white p-8 rounded-2xl text-center cursor-pointer hover-scale">
+                    <i class="fas fa-phone text-4xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">התקשר ישירות</h3>
+                    <p class="text-gray-200 mb-4">054-6822538</p>
+                    <div class="text-sm opacity-75">שיחה אישית מיידית</div>
+                </div>
+            </div>
+            
+            <!-- Contact Form -->
+            <div class="max-w-2xl mx-auto">
+                <div class="bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-2xl p-8">
+                    <h3 class="text-2xl font-bold text-white mb-6 text-center">או השאר פרטים ואחזור אליך</h3>
+                    
+                    <form id="contact-form" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-white text-sm font-medium mb-2">שם מלא</label>
+                                <input type="text" name="name" required 
+                                       class="w-full px-4 py-3 bg-white bg-opacity-20 border border-white border-opacity-30 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
+                                       placeholder="השם שלך">
+                            </div>
+                            <div>
+                                <label class="block text-white text-sm font-medium mb-2">טלפון</label>
+                                <input type="tel" name="phone" required 
+                                       class="w-full px-4 py-3 bg-white bg-opacity-20 border border-white border-opacity-30 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
+                                       placeholder="מספר הטלפון שלך">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-white text-sm font-medium mb-2">אימייל</label>
+                            <input type="email" name="email" required 
+                                   class="w-full px-4 py-3 bg-white bg-opacity-20 border border-white border-opacity-30 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
+                                   placeholder="כתובת המייל שלך">
+                        </div>
+                        <div>
+                            <label class="block text-white text-sm font-medium mb-2">איך אוכל לעזור?</label>
+                            <select name="service" required 
+                                    class="w-full px-4 py-3 bg-white bg-opacity-20 border border-white border-opacity-30 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50">
+                                <option value="">בחר שירות</option>
+                                <option value="course">קורס AI למאמנים</option>
+                                <option value="personal">אימון אישי</option>
+                                <option value="business">אימון עסקי</option>
+                                <option value="financial">אימון פיננסי</option>
+                                <option value="other">אחר</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-white text-sm font-medium mb-2">הודעה</label>
+                            <textarea name="message" rows="4" 
+                                      class="w-full px-4 py-3 bg-white bg-opacity-20 border border-white border-opacity-30 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
+                                      placeholder="ספר לי קצת על עצמך ועל המטרות שלך"></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" 
+                                    class="bg-white text-purple-600 px-8 py-4 rounded-full font-bold text-lg hover-scale shadow-lg">
+                                <i class="fas fa-paper-plane ml-2"></i>
+                                שלח הודעה
+                            </button>
+                        </div>
+                    </form>
+                    
+                    <div id="success-message" class="success-message hidden">
+                        <i class="fas fa-check-circle ml-2"></i>
+                        ההודעה נשלחה בהצלחה! אחזור אליך בהקדם.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold gradient-text mb-4">AI Mentor</h3>
+                    <p class="text-gray-400 mb-4">דוד שמואל - מאמן אישי, עסקי ופיננסי</p>
+                    <p class="text-gray-400">חברת I Will | בשיתוף ארגון אלון גל</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">שירותים</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#course" class="hover:text-white transition-colors">קורס AI למאמנים</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">אימון אישי</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">אימון עסקי</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">אימון פיננסי</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">יצירת קשר</h4>
+                    <div class="space-y-2 text-gray-400">
+                        <p><i class="fas fa-envelope ml-2"></i> israeliwill@gmail.com</p>
+                        <p><i class="fas fa-phone ml-2"></i> 054-6822538</p>
+                        <div class="flex space-x-4 mt-4">
+                            <button onclick="openWhatsApp()" class="text-green-400 hover:text-green-300 transition-colors">
+                                <i class="fab fa-whatsapp text-xl"></i>
+                            </button>
+                            <button onclick="sendEmail()" class="text-blue-400 hover:text-blue-300 transition-colors">
+                                <i class="fas fa-envelope text-xl"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 AI Mentor - דוד שמואל. כל הזכויות שמורות.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Wait for DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize all functionality
+            initSmoothScrolling();
+            initScrollEffects();
+            initContactForms();
+            initMobileMenu();
+            initAnimations();
+        });
+
+        // Smooth scrolling for navigation
+        function initSmoothScrolling() {
+            const navLinks = document.querySelectorAll('a[href^="#"]');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        }
+
+        // Function to scroll to specific section
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
+
+        // Scroll effects for navbar and animations
+        function initScrollEffects() {
+            let lastScrollY = window.scrollY;
+            const navbar = document.querySelector('nav');
+
+            window.addEventListener('scroll', debounce(function() {
+                const currentScrollY = window.scrollY;
+                
+                // Navbar hide/show effect
+                if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                    navbar.style.transform = 'translateY(-100%)';
+                } else {
+                    navbar.style.transform = 'translateY(0)';
+                }
+                
+                lastScrollY = currentScrollY;
+            }, 10));
+
+            // Intersection Observer for fade-in animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe elements for fade-in animation
+            const elementsToAnimate = document.querySelectorAll('.hover-scale, .service-card');
+            elementsToAnimate.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        }
+
+        // Contact form handling
+        function initContactForms() {
+            const contactForm = document.getElementById('contact-form');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const formData = new FormData(this);
+                    const data = Object.fromEntries(formData);
+                    
+                    // Validate form
+                    if (validateForm(data)) {
+                        // Simulate form submission
+                        handleFormSubmission(data);
+                    }
+                });
+            }
+        }
+
+        function validateForm(data) {
+            const required = ['name', 'phone', 'email', 'service'];
+            for (let field of required) {
+                if (!data[field] || data[field].trim() === '') {
+                    alert(`אנא מלא את השדה: ${getFieldLabel(field)}`);
+                    return false;
+                }
+            }
+            
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(data.email)) {
+                alert('אנא הכנס כתובת אימייל תקינה');
+                return false;
+            }
+            
+            return true;
+        }
+
+        function getFieldLabel(field) {
+            const labels = {
+                'name': 'שם מלא',
+                'phone': 'טלפון',
+                'email': 'אימייל',
+                'service': 'סוג שירות'
+            };
+            return labels[field] || field;
+        }
+
+        function handleFormSubmission(data) {
+            // Create email content
+            const subject = `פנייה חדשה: ${data.service}`;
+            const body = `שם: ${data.name}\nטלפון: ${data.phone}\nאימייל: ${data.email}\nשירות: ${data.service}\nהודעה: ${data.message || 'לא צוין'}`;
+            
+            // Open email client
+            const emailLink = `mailto:israeliwill@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.location.href = emailLink;
+            
+            // Show success message
+            showSuccessMessage();
+            
+            // Reset form
+            document.getElementById('contact-form').reset();
+        }
+
+        function showSuccessMessage() {
+            const successMsg = document.getElementById('success-message');
+            if (successMsg) {
+                successMsg.classList.remove('hidden');
+                successMsg.classList.add('show');
+                
+                setTimeout(() => {
+                    successMsg.classList.remove('show');
+                    setTimeout(() => {
+                        successMsg.classList.add('hidden');
+                    }, 300);
+                }, 5000);
+            }
+        }
+
+        // Direct contact functions
+        function sendEmail() {
+            const subject = 'פנייה מאתר AI Mentor';
+            const body = 'שלום דוד,\n\nאני מעוניין לשמוע עוד על השירותים שלך.\n\nתודה!';
+            const emailLink = `mailto:israeliwill@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.location.href = emailLink;
+        }
+
+        function openWhatsApp() {
+            const message = 'שלום דוד! אני מעוניין לשמוע עוד על השירותים שלך 🚀';
+            const whatsappLink = `https://wa.me/972546822538?text=${encodeURIComponent(message)}`;
+            window.open(whatsappLink, '_blank');
+        }
+
+        function callDirect() {
+            window.location.href = 'tel:0546822538';
+        }
+
+        // Mobile menu functionality
+        function initMobileMenu() {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+                
+                // Close mobile menu when clicking on links
+                const mobileLinks = mobileMenu.querySelectorAll('a');
+                mobileLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        mobileMenu.classList.add('hidden');
+                    });
+                });
+            }
+        }
+
+        // Initialize animations
+        function initAnimations() {
+            // Animate price counter
+            animatePriceCounter();
+            
+            // Add hover effects for course highlight
+            const courseHighlight = document.querySelector('.course-highlight');
+            if (courseHighlight) {
+                courseHighlight.addEventListener('mouseenter', function() {
+                    this.style.transform = 'scale(1.02) rotateY(5deg)';
+                });
+                
+                courseHighlight.addEventListener('mouseleave', function() {
+                    this.style.transform = 'scale(1) rotateY(0deg)';
+                });
+            }
+            
+            // Add hover effects for service cards
+            const serviceCards = document.querySelectorAll('.service-card');
+            serviceCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.background = 'rgba(255, 255, 255, 0.25)';
+                    this.style.transform = 'translateY(-15px) scale(1.02)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.background = 'rgba(255, 255, 255, 0.1)';
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+        }
+
+        function animatePriceCounter() {
+            const counter = document.getElementById('price-counter');
+            if (counter) {
+                let current = 0;
+                const target = 1600;
+                const increment = target / 100;
+                const timer = setInterval(function() {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    counter.textContent = Math.floor(current) + '₪';
+                }, 20);
+            }
+        }
+
+        // Utility function for debouncing
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+        // Performance monitoring
+        function logPerformance() {
+            if ('performance' in window) {
+                window.addEventListener('load', function() {
+                    setTimeout(function() {
+                        const perfData = performance.timing;
+                        const loadTime = perfData.loadEventEnd - perfData.navigationStart;
+                        console.log('Page load time:', loadTime, 'ms');
+                    }, 0);
+                });
+            }
+        }
+        
+        // Initialize performance monitoring
+        logPerformance();
+    </script>
+</body>
+</html>
+    <script id="html_badge_script1">
+        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
+            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDgjFqP30dD1BKeh9APzFUvT1tE%2F9Oy6R5HfDzCIzzJ3%2BHUEi9mk0YBCBYAKfYxHDSxrJcoH0qKB8%2FfWA39cLF3ll7TSCT8NtP8NY7JhyDAXtYejGoR7KdwIgD%2Fv53ojrylK0R%2Bi9xN7MgGYpgVppNxWyUQff%2BFy96CpypSwbEeq2KOxNBQBimzZdeIGw0TPRAsf1MsThvBZ2mVWrOcxk%2BhX3xxN7qgLXbCd6uX95rrMqijN9Rjvg2x%2BqTWs4k56l2cSZE3w4lMLq56koqEjNcb6hJQE2sZmvNv%2BlWCKuoMVdM1Pk77wZrwwa97rGAx0Tec8U9ZOQ1OLi9IW72TC5v8ozBp0kyVY25JGqGZGF%2BBrNgPcuqA9XlYE6u%2FCjoDD56yj5FvehyfXOp3lWDh%2BDIBicoRusbaVE90krNm37%2B%2FH4ob5h0Xox0XjcgA2G3YlVDnxYdsB0Dhs8xsD6aneStltSFoYKzTmlLnVz%2F76DrmMcomCUatAVBonizCO1pgfPrA%3D%3D";
+        window.__genspark_locale = "en-US";
+        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDgjFqP30dD1BKeh9APzFUvT1tE/9Oy6R5HfDzCIzzJ3+HUEi9mk0YBCBYAKfYxHDSxrJcoH0qKB8/fWA39cLF3ll7TSCT8NtP8NY7JhyDAXtYejGoR7KdwIgD/v53ojrylK0R+i9xN7MgGYpgVppNxWyUQff+Fy96CpypSwbEeq2KOxNBQBimzZdeIGw0TPRAsf1MsThvBZ2mVWrOcxk+hX3xxN7qgLXbCd6uX95rrMqijN9Rjvg2x+qTWs4k56l2cSZE3w4lMLq56koqEjNcb6hJQE2sZmvNv+lWCKuoMVdM1Pk77wZrwwa97rGAx0Tec8U9ZOQ1OLi9IW72TC5v8ozBp0kyVY25JGqGZGF+BrNgPcuqA9XlYE6u/CjoDD56yj5FvehyfXOp3lWDh+DIBicoRusbaVE90krNm37+/H4ob5h0Xox0XjcgA2G3YlVDnxYdsB0Dhs8xsD6aneStltSFoYKzTmlLnVz/76DrmMcomCUatAVBonizCO1pgfPrA==";
+    </script>
+    
+    <script id="html_notice_dialog_script" src="https://www.genspark.ai/notice_dialog.js"></script>
+    
